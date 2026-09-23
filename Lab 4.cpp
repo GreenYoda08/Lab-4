@@ -13,10 +13,16 @@ int main()
     double price;
     char member;
     string yeno;
+    double total;
+    double tax;
+    double sub_total;
+    double discount;
+    double taxp;
+    string notes;
 
 
     cout << "Enter the food name: ";
-    getline(cin, food_name);
+    cin >> food_name;
 
     cout << "Enter the item code: ";
     cin >> code;
@@ -38,8 +44,34 @@ int main()
     cout << right << setw(7) << quantity << endl;
     cout << right << setw(9) << setprecision(2) << fixed << price << endl;
     cout << right << setw(7) << member << endl;
-
     
+    sub_total = price * quantity;
+    discount = .1 * sub_total;
+    tax = 0.06;
+
+    if (member == 'y') {
+        sub_total = sub_total - discount;
+        taxp = tax * sub_total;
+        total = sub_total + taxp;
+    }
+    else {
+        tax = tax * sub_total;
+        total = sub_total;
+    }
+
+    cout << right << setw(9) << setprecision(2) << fixed << total << endl;
+    cout << "Enter cashier notes: " << endl;;
+    getline(cin, notes);
+
+    cout << right << setw(8) << "Notes: " << notes << endl;
+
+    cout << left << setw(18) << "Pears" << endl;
+    cout << right << setw(6) << 20 << endl;
+    cout << right << setw(7) << 4.99 << endl;
+
+    cout << left << setw(18) << "Apples" << endl;
+    cout << right << setw(6) << 20 << endl;
+    cout << right << setw(7) << 5.99 << endl;
 
 }
 
