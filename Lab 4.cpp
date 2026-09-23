@@ -1,20 +1,45 @@
-// Lab 4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 
 #include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string food_name;
+    char code;
+    int quantity;
+    double price;
+    char member;
+    string yeno;
+
+
+    cout << "Enter the food name: ";
+    getline(cin, food_name);
+
+    cout << "Enter the item code: ";
+    cin >> code;
+
+    cout << "How many fruits: ";
+    cin >> quantity;
+
+    cout << "What is the price: ";
+    cin >> price;
+
+    cout << "Are you a member(y/n): ";
+    cin >> member;
+
+
+
+
+    cout << right << setw(9) << food_name << endl;
+    cout << right << setw(7) << code << endl;
+    cout << right << setw(7) << quantity << endl;
+    cout << right << setw(9) << setprecision(2) << fixed << price << endl;
+    cout << right << setw(7) << member << endl;
+
+    
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
